@@ -1,10 +1,10 @@
 # 꼭 다시 풀어보기
-# 많이 어려움
+# 이해 안감
 
 import sys
 from collections import deque
 def bfs(x,y):
-    dist = [[-1]*(w+2) for _ in range(h+2)]
+    dist = [[-1]*(w+2) for _ in range(h+2)]# 열어야하는 문의 개수
     q = deque()
     q.append((x,y))
     dist[x][y]=0
@@ -21,7 +21,7 @@ def bfs(x,y):
                 q.append((nx,ny))
             elif jail[nx][ny]=='.':#그냥 빈공간
                 dist[nx][ny]=dist[x][y]
-                q.appendleft((nx,ny))
+                q.appendleft((nx,ny))#열어야 하는 문의 최솟값을 구해야 하므로 appendleft❗
     return dist
 T = int(sys.stdin.readline())
 for _ in range(T):

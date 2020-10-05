@@ -10,7 +10,7 @@ def bfs():
     de = deque()
     de.append([0,0])
     ch[0][0]=0
-    dq = [deque() for _ in range(26)]
+    dq = [deque() for _ in range(26)] # dp[i]: i 열쇠가 있을때 들어갈 수 있는 문의 배열
     r=0
     while de:
         x, y = de.popleft()
