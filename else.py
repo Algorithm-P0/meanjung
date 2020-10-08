@@ -1,3 +1,2 @@
-string = "string"
-print(list(string))
-print(string)
+if 1 in [2,3,4]:
+    print('a')
