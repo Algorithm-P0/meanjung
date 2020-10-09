@@ -1,2 +1,6 @@
-if 1 in [2,3,4]:
-    print('a')
+import time
+import sys
+N = int(sys.stdin.readline())
+start = time.time()
+lst = [0]*1000001
+print(time.time()-start)
