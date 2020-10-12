@@ -4,6 +4,9 @@ n, W = map(int, sys.stdin.readline().split())
 s=[]
 for _ in range(n):
     s.append(int(sys.stdin.readline()))
-"""
-포기^^
-"""
+for i in range(n-1):
+    if s[i]<s[i+1]:
+        x = W//s[i]
+        W = W%s[i]
+        W += x*s[i+1]
+print(W)
