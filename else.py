@@ -1,2 +1,2 @@
-a = 'b'
-print(type(a)==type('a'))
+for i in range(1, 1):
+    print('a')
