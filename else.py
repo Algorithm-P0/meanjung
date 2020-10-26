@@ -1,10 +1,3 @@
-import heapq
-import sys
-
-lst = []
-for l in map(int, sys.stdin.readline().split()):
-    heapq.heappush(lst, l)
-
-length1 = heapq.heappop(lst)
-print(length1)
-print(lst)
+s = [[1,2,5],[1,4,1],[2,6,6],[6,2,2]]
+for a,b,c in s[2]:
+    print(a,b)
