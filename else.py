@@ -1,3 +1,2 @@
-s = [[1,2,5],[1,4,1],[2,6,6],[6,2,2]]
-for a,b,c in s[2]:
-    print(a,b)
+for i in range(10,4,-1):
+    print(i)
