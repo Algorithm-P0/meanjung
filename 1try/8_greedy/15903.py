@@ -1,0 +1,9 @@
+import sys
+n, m = map(int, sys.stdin.readline().split())
+a = list(map(int, sys.stdin.readline().split()))
+
+for _ in range(m):
+    a.sort()
+    a[0] = a[0] + a[1]
+    a[1] = a[0]
+print(sum(a))
