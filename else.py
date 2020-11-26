@@ -1,3 +1,4 @@
-s = "string"
-print(s[1:4])
-print(int("123"))
+import heapq
+heap = [(1,1),(1,1),(1,-1),(1,-1),(2,2),(2,-2)]
+heapq.heapify(heap)
+print(heap)
