@@ -1,8 +1,4 @@
-t = 1
-s = -1
-if t:
-    print('t')
-if s:
-    print('s')
-# 0 -> false
-# 그 외 정수 -> true
+l = [1,2,3,4,5]
+r = [2,3,4,5]
+if l==r:
+    print(1)
