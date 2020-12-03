@@ -1,4 +1,3 @@
-l = [1,2,3,4,5]
-r = [2,3,4,5]
-if l==r:
-    print(1)
+l = "string"
+for i in l:
+    print(i)
