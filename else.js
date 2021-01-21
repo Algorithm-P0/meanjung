@@ -1,0 +1,1 @@
+console.log(new Date("2021-01-10 00:00:00"))

@@ -1,2 +1,0 @@
-* next_permutaion 직접 구현하는거 이해하면 좋을 듯
-[백준 10819] https://hjp845.tistory.com/70
