@@ -1,3 +1,2 @@
-a = [1,2]
-d = [3,4]
-print(a+d)
+print(ord('A'))
+print(chr(ord('A')+2))
