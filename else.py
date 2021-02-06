@@ -7,6 +7,4 @@
 
 # dp먼저 풀고 시간 남으면 시뮬/구현/그래프
 
-
-# https://www.acmicpc.net/problem/16234
-# https://solved.ac/problems/tags/implementation?sort=level&direction=asc&page=10
+# https://solved.ac/problems/tags/dp?sort=level&direction=asc&page=4
