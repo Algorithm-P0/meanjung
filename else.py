@@ -8,3 +8,4 @@
 # dp먼저 풀고 시간 남으면 시뮬/구현/그래프
 
 # https://solved.ac/problems/tags/dp?sort=level&direction=asc&page=4
+print(10000001)
