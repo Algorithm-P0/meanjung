@@ -13,3 +13,6 @@
 
 
 # https://www.acmicpc.net/problem/17141
+D = 8
+for i in reversed(range(D)):
+    print(i, end=' ')
