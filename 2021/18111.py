@@ -1,6 +1,6 @@
 import sys
 N, M, B = map(int, sys.stdin.readline().split())
-# 세로N 가로M
+# 세로N 가로M 인벤토리B
 graph = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 leastTime = sys.maxsize
 for h in range(257):
@@ -13,9 +13,9 @@ for h in range(257):
                 remove += height
             elif height<0:
                 build -= height
-    if remove+B >= build:
-        time = remove*2 + build
-        if leastTime>=time:
+    if remove+B>=build:
+        time = 2*remove+build
+        if time<=leastTime:
             leastTime = time
-            mostHeigth = h
-print(leastTime, mostHeigth)
+            mostHeight = h
+print(leastTime, mostHeight)

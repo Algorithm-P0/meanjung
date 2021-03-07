@@ -1,51 +1,43 @@
 import sys
-# N세로선(x)  H가로선(y)
-N, M, H = map(int, sys.stdin.readline().split())
-if M==0:
-    print(0)
-    sys.exit()
-bridge = [[0]*N for _ in range(H)]
-for _ in range(M):
+n, m, h = map(int, sys.stdin.readline().split())
+bridge = [[False]*n for _ in range(h)]
+# 세로선 n개/ 가로선 h개
+for _ in range(m):
     a, b = map(int, sys.stdin.readline().split())
-    bridge[a-1][b-1] = 1
-
-def move():
-    for start in range(N):
-        x = start
-        for y in range(H):
-            if bridge[y][x]!=0:
-                x+=1
-            elif x>0 and bridge[y][x-1]!=0:
-                x-=1
-        if start!=x:
+    bridge[a-1][b-1]=True
+def check():
+    for x in range(n):
+        k = x # 세로선
+        for y in range(h):
+            if bridge[y][k]:
+                k+=1
+            elif k>0 and bridge[y][k-1]:
+                k-=1
+        if x!=k:
             return False
     return True
-
-def dfs(cnt, idy, r):
+def dfs(cnt, y, x):
     global ans
-    if cnt==r:
-        if move():
-            ans = cnt
+    if check():
+        ans = min(ans, cnt)
         return
-    for y in range(idy, H):
-        for x in range(N-1):
-            if bridge[y][x]!=0:
-                continue
-            if x-1>=0 and bridge[y][x-1]!=0:
-                continue
-            if x+1<N and bridge[y][x+1]!=0:
-                continue
-            bridge[y][x]=1
-            dfs(cnt+1, y, r)
-            bridge[y][x]=0
+    elif cnt==3 or ans<=cnt:
+        return
+    for i in range(y, h):# 가로선
+        if i==y:
+            k = x
+        else:
+            k = 0
+        for j in range(k, n-1):# 세로선
+            if bridge[i][j]==False and bridge[i][j+1]==False:
+                bridge[i][j]=True
+                dfs(cnt+1, i, j+2)
+                bridge[i][j]=False
 
+    
 ans = 4
-flag = 1
-for r in range(4):
-    dfs(0, 0, r)
-    if ans!=4:
-        print(ans)
-        flag = 0
-        break
-if flag!=0:
+dfs(0,0,0)
+if ans<4:
+    print(ans)
+else:
     print(-1)
