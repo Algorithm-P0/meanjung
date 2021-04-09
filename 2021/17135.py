@@ -1,3 +1,4 @@
+# 다시 풀어보면 좋을듯
 import sys
 
 N, M, D = map(int, sys.stdin.readline().split())
