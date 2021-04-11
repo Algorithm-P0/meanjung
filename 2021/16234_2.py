@@ -7,8 +7,6 @@ A = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 dy = [-1,1,0,0]
 dx = [0,0,1,-1]
 def bfs(y, x):
-    s = A[y][x]
-    visited[y][x]=True
     q = deque()
     q.append([y, x])
     l = [[y,x]]
@@ -22,7 +20,6 @@ def bfs(y, x):
                     q.append([ny, nx])
                     visited[ny][nx]=True
                     l.append([ny, nx])
-                    s+=A[ny][nx]
     return l
     
 
@@ -33,8 +30,9 @@ while True:
     for y in range(N):
         for x in range(N):
             if visited[y][x]==False:
+                visited[y][x]=True
                 temp = bfs(y, x)
-                if len(temp)>2:
+                if len(temp)>=2:
                     to_break = 1
                     num = sum(A[ly][lx] for ly, lx in temp)//len(temp)
                     for ly, lx in temp:
