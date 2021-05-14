@@ -30,6 +30,20 @@ def solution(k, room_number):
 #     empty = find_emptyRoom(rooms[num], rooms)
 #     rooms[num] = empty + 1
 #     return empty
+def solution(k, room_number):
+    roomDict = {}
+    result = []
+    for r in room_number:
+        n = r
+        visit = [n]
+        while n in roomDict.keys():
+            n = roomDict[n]
+            visit.append(n)
+        result.append(n)
+        for j in visit:
+            roomDict[j] = n+1
+    return result
+
 
 
 # solution(10, [1,3,4,1,3,1])
