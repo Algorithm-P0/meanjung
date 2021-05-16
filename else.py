@@ -1,1 +1,1 @@
-print('a')
+print(3//2)
